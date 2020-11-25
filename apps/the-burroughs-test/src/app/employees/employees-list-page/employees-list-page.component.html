@@ -1,0 +1,33 @@
+<div class='page animate__animated animate__fadeInLeft'>
+
+    <h1 class=''>Employees</h1>
+
+    <p>
+        Click on 'View Schedule' to view an employee's payment schedule
+    </p>
+
+    <h4>Data</h4>
+    <pre>
+        {{ data | json }}
+    </pre>
+
+    <table>
+        <thead>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>View</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#123123</td>
+                <td>Ed Byrne</td>
+                <td>
+                    <a [routerLink]="'/employees/' + 1">
+                        View Schedule
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
