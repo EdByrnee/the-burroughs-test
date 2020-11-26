@@ -1,4 +1,5 @@
-![The Burroughs test](https://www.uidownload.com/files/10/345/301/hand-drawn-game-controller-thumb.jpg)
+![The Burroughs test](https://webstockreview.net/images/gaming-clipart-game-icon-3.jpg)
+
 # The Burroughs Test
 
 This project demonstrate the following key features of good practice:
