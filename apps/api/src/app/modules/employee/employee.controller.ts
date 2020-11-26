@@ -1,16 +1,11 @@
-import { ApiOperation, ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Controller, Get, Param } from '@nestjs/common';
 import { EmployeeService } from './employee.service';
 import { PaymentsService } from '../payments/payments.service';
 import { EmployeeDto } from './dto/employee.dto';
 import { DayService } from '../payments/day.service';
+import { ListEmployeesResponseDto, ViewEmployeeResponseDto } from "@the-burroughs-test/api-interfaces"
 
-export class ListEmployeesResponseDto{
-
-  @ApiProperty({ type: String, isArray: true, example: "emp1" })
-  employees: any[];
-
-}
 
 export class EmployeePayment{
   payment_amount: number;
@@ -49,7 +44,7 @@ export class EmployeeController {
     @ApiResponse({
         status: 200,
         description: 'Success',
-        // type: GetVenuesByPostcodeResponseDto
+        type: ViewEmployeeResponseDto
       })
     async viewEmployee(@Param("id") id:number): Promise<any>{
 
