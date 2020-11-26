@@ -4,9 +4,10 @@
 
 This project demonstrate the following key features of good practice:
 
-  - :book: Documentation
+- :book: Documentation
 	- This api is documented using OPEN API, you can read the docs at http://localhost:3333/api (see api section below)
 	- All of the endpoints are fully documented along with full schema and examples of the http responses you might receive, and description of the endpoints etc.
+	
 - :pencil2: Design
 	- Modularization - code is organissed by feature module e.g. all code relating to employees is in the `EmployeeModule`
 	- Separation of business logic and application logic - controllers (the routes) hold the business logic, and all the application logic is stored within the services e.g. `PaymentService.getLastWorkingDayOfMonth()`
