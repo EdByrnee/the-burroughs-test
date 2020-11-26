@@ -16,12 +16,13 @@ export class PaymentsService {
 
         // Get the day of week e.g. monday = 1
         const day_of_week = month_object.day();
+        console.log(`The day of week for the month is ${day_of_week + " / " + month_object.toString()}`)
 
         if (day_of_week === 6){
             // If saturday, return friday
             month_object = month_object.subtract(1, "day");
         }
-        if(day_of_week === 7){
+        if(day_of_week === 0){
             // If sunday, return friday
             month_object = month_object.subtract(2, "day");
         }
@@ -42,15 +43,14 @@ export class PaymentsService {
             // If saturday, return next wednesday
             month_object = month_object.add(4, "day");
         }
-        if(day_of_week === 7){
+        if(day_of_week === 0){
             // If sunday, return next wednesday
-            month_object = month_object.add(5, "day");
+            month_object = month_object.add(3, "day");
         }
 
         return month_object;
 
     }
-
 
 
 }

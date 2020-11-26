@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import * as daysj from 'dayjs';
+import * as dayjs from 'dayjs';
+
 @Injectable()
 export class DayService {
-    dayjs(args?): daysj.Dayjs {
-        return daysj(args);
+    dayjs(args?): dayjs.Dayjs {
+        return dayjs(args).locale("uk")
     }
 }
