@@ -1,10 +1,12 @@
 <div class='page animate__animated animate__fadeInLeft'>
 
-    <!-- <a [routerLink]="'/employees'">
-        Back
-    </a> -->
+    <br>
+    <a [routerLink]="'/employees'">
+        Back to employees
+    </a>
 
-    <h1>Ed Byrne's Payment Schedule (#445245)</h1>
+
+    <h1>{{ employee.employee_name }} Payment Schedule (#{{ employee.id}})</h1>
     <table>
         <thead>
             <th>Date</th>
@@ -12,15 +14,15 @@
             <th>Amount</th>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let p of upcoming_payments">
                 <td>
-                    10/10/2020
+                    {{ p.payment_date | date:"dd MMM  yyyy" }}
                 </td>
                 <td>
-                    Base Salary
+                    {{ p.payment_type }}
                 </td>
                 <td>
-                    £233.00
+                   {{ p.payment_amount | currency:"GBP":true }}
                 </td>
             </tr>
         </tbody>

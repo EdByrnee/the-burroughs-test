@@ -1,17 +1,13 @@
-/*
- * Remove template code below
- */
 .navbar{
   border-bottom: solid #e3e3e3 1px;
   display: flex;
-  // border: solid red 1px;
   align-items: center;
+  padding: 26px;
+  display:flex;
+  justify-content: space-between;
+
 }
 
-:host {
-  display: block;
-  font-family: sans-serif;
-  min-width: 300px;
-  max-width: 600px;
-  margin: 0px auto;
-} 
+a{
+  cursor: pointer;
+}

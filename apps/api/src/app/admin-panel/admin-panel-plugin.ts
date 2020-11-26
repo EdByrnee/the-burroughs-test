@@ -15,7 +15,7 @@ export async function setupAdminPanel(app: INestApplication): Promise<void> {
   /** Create adminBro instance */
   const adminBro = new AdminBro({
     resources: [
-      //EmployeeResource
+      EmployeeResource
     ],        // Here we will put resources
     rootPath: '/admin',   // Define path for the admin panel
   });

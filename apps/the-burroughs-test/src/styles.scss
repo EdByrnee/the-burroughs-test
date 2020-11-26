@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Lato', sans-serif;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+}
+
+.page{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+table{
+    font-size: 18px;
+}

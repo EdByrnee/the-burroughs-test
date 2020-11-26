@@ -15,7 +15,7 @@ export class EmployeesService {
     return this.http.get(url).toPromise();
   }
 
-  loadEmployee(id: number): Promise<any>{
+  loadEmployeeById(id: number): Promise<any>{
     const url = environment.api_url + '/employees/' + id;
     return this.http.get(url).toPromise();
   }

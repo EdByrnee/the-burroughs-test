@@ -19,8 +19,8 @@ async function bootstrap() {
 
   // Init api docs
   const options = new DocumentBuilder()
-    .setTitle('Local shopper main API')
-    .setDescription('Yes its monolythic, but it works!')
+    .setTitle('Burroughs Test API')
+    .setDescription('Technical test for backend developer role.')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
@@ -29,7 +29,7 @@ async function bootstrap() {
   // Set up the admin panel
   await setupAdminPanel(app);
 
-
+  app.enableCors();
 
   await app.listen(port, () => {
     Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);

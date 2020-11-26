@@ -6,11 +6,9 @@ export class EmployeeDto{
     readonly employee_name:string;
 
     @ApiProperty({type: Number, description: "The base salary of the employee"})
-    readonly employee_base_salary:string;
+    readonly employee_base_salary:number;
 
     @ApiProperty({type: Number, description: "The bonus for the employee"})
     readonly employee_bonus:number;
-    
-
     
 }

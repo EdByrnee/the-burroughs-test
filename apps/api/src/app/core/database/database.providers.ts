@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { Employee } from '../../modules/employee/entity/Employee.entity';
+import { Employee } from '../../modules/employee/entity/employee.entity';
 import { SEQUELIZE, DEVELOPMENT, TEST, PRODUCTION } from '../constants';
 import { databaseConfig } from './database.config';
 

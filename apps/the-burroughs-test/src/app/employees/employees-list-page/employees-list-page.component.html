@@ -6,10 +6,6 @@
         Click on 'View Schedule' to view an employee's payment schedule
     </p>
 
-    <h4>Data</h4>
-    <pre>
-        {{ data | json }}
-    </pre>
 
     <table>
         <thead>
@@ -18,11 +14,13 @@
             <th>View</th>
         </thead>
         <tbody>
-            <tr>
-                <td>#123123</td>
-                <td>Ed Byrne</td>
+            <tr *ngFor="let e of data">
+                <td>#{{ e.id }}</td>
                 <td>
-                    <a [routerLink]="'/employees/' + 1">
+                    {{ e.employee_name }}
+                </td>
+                <td>
+                    <a [routerLink]="'/employees/' + e.id">
                         View Schedule
                     </a>
                 </td>
