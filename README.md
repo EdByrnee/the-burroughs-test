@@ -1,14 +1,14 @@
-![The Burroughs test](https://webstockreview.net/images/gaming-clipart-game-icon-3.jpg)
+![The Burroughs test](https://news.xbox.com/en-us/wp-content/uploads/sites/2/win_g_OOBE_Xenon.gif?resize=940%2C528)
 
 # The Burroughs Test
 
 This project demonstrate the following key features of good practice:
 
   - :book: Documentation
-	- This api is FULLY documented using OpenApi, you can read the docs at http://localhost:3333/api (see api section below)
-	- All of the endpoints are full documented along with full schema and examples of the http responses you might receive, and description of the endpoints etc.
+	- This api is documented using OPEN API, you can read the docs at http://localhost:3333/api (see api section below)
+	- All of the endpoints are fully documented along with full schema and examples of the http responses you might receive, and description of the endpoints etc.
 - :pencil2: Design
-	- Modularization - code is organised by feature module e.g. all code relating to employees is in the `EmployeeModule`
+	- Modularization - code is organissed by feature module e.g. all code relating to employees is in the `EmployeeModule`
 	- Separation of business logic and application logic - controllers (the routes) hold the business logic, and all the application logic is stored within the services e.g. `PaymentService.getLastWorkingDayOfMonth()`
 
 - :space_invader: Testing
