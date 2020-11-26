@@ -23,7 +23,8 @@ This project demonstrate the following key features of good practice:
 Of course a lot was left out, future work for the api would include:
 - e2e tests
 - Added functionality
--  Decouple api from feature modules
+- Decouple api from feature modules
+- All the obvious stuff, db migrations, demo data etc.
 
 ## Start the application
 `nx serve --project=api` Start the api, http://localhost:3333/api
