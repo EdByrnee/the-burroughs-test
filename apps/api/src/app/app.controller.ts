@@ -1,6 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { Message } from '@the-burroughs-test/api-interfaces';
+import { Controller } from '@nestjs/common';
 
 import { AppService } from './app.service';
 

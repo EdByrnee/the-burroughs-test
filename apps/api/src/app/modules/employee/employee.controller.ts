@@ -1,17 +1,11 @@
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, HttpException, HttpStatus, Param } from '@nestjs/common';
 import { EmployeeService } from './employee.service';
 import { PaymentsService } from '../payments/payments.service';
-import { EmployeeDto } from './dto/employee.dto';
 import { DayService } from '../payments/day.service';
-import { ListEmployeesResponseDto, ViewEmployeeResponseDto } from "@the-burroughs-test/api-interfaces"
-
-
-export class EmployeePayment{
-  payment_amount: number;
-  payment_date: string;
-  payment_type:string;
-}
+import { EmployeePayment, ListEmployeesResponseDto, ViewEmployeeResponseDto } from "@the-burroughs-test/api-interfaces"
+import { EmployeeDto } from '@the-burroughs-test/api-interfaces';
+import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
 
 @ApiTags("/employees")
 @Controller('employees')
@@ -26,10 +20,14 @@ export class EmployeeController {
     @Get('/')
     @ApiOperation({ summary: 'Get a list of exisitng employees' })
     @ApiResponse({
-        status: 200,
-        description: 'Success',
-        type: ListEmployeesResponseDto
-      })
+      status: 200,
+      description: 'Success',
+      type: ListEmployeesResponseDto
+    })
+    @ApiResponse({
+      status: 500,
+      description: 'Internal server error'
+    })
     async listEmployees(): Promise<any>{
 
         return this.employeeService.findAll({
@@ -39,16 +37,32 @@ export class EmployeeController {
 
     }
 
-    @Get('/:id')
+    @Get('/:EmployeeId')
     @ApiOperation({ summary: 'View employee detail, including upcoming scheduled payments for the employee.' })
     @ApiResponse({
-        status: 200,
-        description: 'Success',
-        type: ViewEmployeeResponseDto
-      })
-    async viewEmployee(@Param("id") id:number): Promise<any>{
+      status: 200,
+      description: 'Success',
+      type: ViewEmployeeResponseDto
+    })
+    @ApiResponse({
+      status: 404,
+      description: 'Employee not found'
+    })
+    @ApiResponse({
+      status: 500,
+      description: 'Internal server error'
+    })
+    async viewEmployee(@Param("EmployeeId") EmployeeId:number): Promise<any>{
 
-        const employee: EmployeeDto = await this.employeeService.findOneById(id);
+        const employee: EmployeeDto = await this.employeeService.findOneById(EmployeeId);
+
+        // Can handle not found with 404 or in json response,
+        // Here we choose to handle with 404
+        if(!employee) throw new HttpException({
+          code: HttpStatus.NOT_FOUND,
+          error: "NOT_FOUND"
+        }, HttpStatus.NOT_FOUND)
+
         const current_year = this.dayService.createDay().year();
         const current_month = this.dayService.createDay().month() + 1;
         
