@@ -9,7 +9,7 @@ export class PaymentsService {
     getLastWorkingDayOfMonth(year: number, month:number): any{
 
         // Go to the month
-        let month_object = this.dayService.dayjs(`${year}-${month}-01`);
+        let month_object = this.dayService.createDay(`${year}-${month}-01`);
 
         // Go to the last day of the month
         month_object = month_object.add(month_object.daysInMonth() - 1, "day");
@@ -33,8 +33,11 @@ export class PaymentsService {
 
     getBonusPaymentDateOfMonth(year: number, month:number):any {
 
-        // Go to the 15th of the month 
-        let month_object = this.dayService.dayjs(`${year}-${month}-15`);
+        // Go to the month
+        let month_object = this.dayService.createDay(`${year}-${month}-01`)
+
+        // Go to the last day of the month
+        month_object = month_object.add(15 - 1, "day");
 
         // Get the day of week e.g. monday = 1
         const day_of_week = month_object.day();

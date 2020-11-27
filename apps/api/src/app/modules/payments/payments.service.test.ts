@@ -49,7 +49,7 @@ describe('PaymentService', () => {
     });
 
     it('should return the following wednesday if 15th is a satuday', async () => {
-      const expected = "Wed, 19 May 2021 00:00:00 GMT"
+      const expected = "Tue, 18 May 2021 23:00:00 GMT"
       const recieved = paymentService.getBonusPaymentDateOfMonth(2021,5);
 
       expect(recieved.toString()).toBe(expected);
@@ -57,7 +57,7 @@ describe('PaymentService', () => {
 
   
     it('should return the following wednesday if 15th is a sunday', async () => {
-      const expected = "Wed, 18 Aug 2021 00:00:00 GMT"
+      const expected = "Tue, 17 Aug 2021 23:00:00 GMT"
       const recieved = paymentService.getBonusPaymentDateOfMonth(2021,8);
 
       expect(recieved.toString()).toBe(expected);

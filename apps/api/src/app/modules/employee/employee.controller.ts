@@ -49,8 +49,8 @@ export class EmployeeController {
     async viewEmployee(@Param("id") id:number): Promise<any>{
 
         const employee: EmployeeDto = await this.employeeService.findOneById(id);
-        const current_year = this.dayService.dayjs().year();
-        const current_month = this.dayService.dayjs().month() + 1;
+        const current_year = this.dayService.createDay().year();
+        const current_month = this.dayService.createDay().month() + 1;
         
 
         // Build a list of payment for the next 12 months

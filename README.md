@@ -32,5 +32,12 @@ Of course a lot was left out, future work for the api would include:
 
 `nx serve` Start the frontend, http://localhost:4200
 
+#### (First you must configure!)
+1. `apps\api\.env` Here is the env file, add your database credentials here
+2. Browse to `http://localhost:3333`, here you can make an employee with a salary in the admin panel
+3. You can now start the frontend and view employee PAYE at `http://localhost:4200`
+
+(I would have made a sqlite db, but I wanted to showcase admin-bro panel)
+
 ## Run the tests
 `nx test --project=api` (Starts the unit tests on the api)
