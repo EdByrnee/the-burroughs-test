@@ -15,6 +15,7 @@ This project demonstrate the following key features of good practice:
 - :space_invader: Testing
 	- Unit Tests implemented, was sure to include all sunny and rainy cases
 	- Pure functions, - All functions have a predictable input and output, and can be unit tested in isolation
+	- Find the relavent tests at `apps\api\src\app\modules\payments\payments.service.test.ts`
 
 
 - :bulb: Deployment & Extra
